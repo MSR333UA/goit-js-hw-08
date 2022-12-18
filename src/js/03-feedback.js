@@ -25,6 +25,10 @@ function updateForm() {
   // console.log(saveField);
   if (saveField) {
     saveField = JSON.parse(saveField);
+  } else {
+    return;
   }
-  return;
+  Object.entries(saveField).forEach(
+    ([name, value]) => (form.elements[name].value = value)
+  );
 }
